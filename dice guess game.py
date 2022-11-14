@@ -62,7 +62,7 @@ if __name__=="__main__":
     choice=input("Enter your choice: ")
     # print(dice[userinput],dice(random.randint(1,6)))
     while True:
-        if choice == "exit":
+        if choice == "exit" or choice=="EXIT":
             exit()
 
         else:
