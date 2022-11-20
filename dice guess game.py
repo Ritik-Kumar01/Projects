@@ -59,44 +59,49 @@ if __name__=="__main__":
             "└─────────┘",
         )
     }
-    choice=input("Enter your choice: ")
-    # print(dice[userinput],dice(random.randint(1,6)))
-    while True:
-        if choice == "exit" or choice=="EXIT":
-            exit()
+    choice=input("Press Enter To Start or Exit To Quit: ").lower()
 
-        else:
-            score,n_turns=0,0
-            while True:
-                ai=random.randint(1,6)
-                print()
-                userinput=input("Guess the number: ")
-                # print(dice[userinput])
-                if userinput=="exit":
-                    print("Thanks for playing the game!!")
-                    print("you played",n_turns,"times")
-                    print("your final scores is :",score)
-                    exit()
-                elif userinput!="exit" and (userinput.isalpha() or userinput==""):
+    if choice == "exit":
+        pass
 
-                    print("wrong input or not input given")
-                elif int(userinput)>6 or int(userinput)<1:
-                    print("number entered is either greater than 6 or less than 1, please give a correct input!!")
-                elif ai==int(userinput):
-                    # print(dice[ai],dice[int(userinput)])
-                    print_dice(dice[ai],dice[int(userinput)])
-                    print("--------------RESULT---------------")
-                    print("Good job u guessed it right")
-                    print("+10 pts")
-                    score+=10
-                    n_turns+=1
-                    print("number of turns",n_turns)
-                    print("score:",score)
+    else:
+        score,n_turns=0,0
+        while True:
+
+            ai=random.randint(1,6)
+            print()
+            userinput=input("Guess the number: ")
+            if userinput=="":
+                print("no input given, please give some input!!")
+
+            elif userinput.isalpha():
+                if userinput.lower()=="exit":
+                    break
                 else:
-                    print_dice(dice[ai],dice[int(userinput)])
-                    n_turns+=1
-                    print("--------------RESULT---------------")
-                    print("oops! you guessed the wrong number")
-                    print("number of turns",n_turns)
-                    
-                    print("score:",score)
+                    print("wrong input or no input given, please give a valid input")
+            
+            elif userinput != "6" and userinput != "5" and userinput!="4" and userinput!="3" and userinput!="2" and userinput!="1" and userinput!="exit":
+                print("wrong input or no input given, please give a valid input")
+            
+            elif ai == int(userinput):
+                print_dice(dice[ai],dice[int(userinput)])
+                print("--------------RESULT---------------")
+                print("Good job u guessed it right")
+                print("+10 pts")
+                score+=10
+                n_turns+=1
+                print("number of turns",n_turns)
+                print("score:",score)
+
+            else:
+                print_dice(dice[ai],dice[int(userinput)])
+                n_turns+=1
+                print("--------------RESULT---------------")
+                print("oops! you guessed the wrong number")
+                print("number of turns",n_turns)
+                print("score:",score)
+print()
+print("you played",n_turns,"times")
+print("your final scores is :",score)
+print("Thank you for playing this game!")
+print("Have a nice day")
