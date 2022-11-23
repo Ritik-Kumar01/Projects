@@ -5,8 +5,8 @@ def email_sclicer(email):
     i=email.index("@")
     return  email[:i],email[i+1:]  #returns a tuple containing string before and after "@"
 
-email=input("Enter yout email: ")
 while True:
+    email=input("Enter yout email: ")
     if "@" in email:
         username,domain=email_sclicer(email)
         print(f"username: {username} and domain: {domain.upper()}")
