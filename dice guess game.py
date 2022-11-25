@@ -12,6 +12,7 @@ if __name__=="__main__":
     print("3) if user guess it correctly +10 pts")
     print("4) if user guess it wrong 0 pts added")
     print("5) user can play this game as many times as he wants")
+    print("6) To exit the game while playing press exit to quit the game in between")
     print()
     print("press any key to start and 'exit' to quit:")
     print()
