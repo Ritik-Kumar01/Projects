@@ -71,7 +71,20 @@ def ifleapyear(year):
     days = 0
     month = {1:31, 2:28, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
     month2 = {1:31, 2:29, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31} 
-    
+    if y1==y2:
+        if m1!=m2:
+            if ifleapyear(y1):
+                for i in range(m1+1,m2):
+                    days += month2[i]
+                days += month2[m1] - d1
+                days += d2
+            else:
+                for i in range(m1 + 1, m2):
+                    days += month[i]
+                days += month[m1] - d1
+                days += d2
+        else:
+            days += d2 - d1
     else:
         yd = days_between_year( y1 , y2 )
         mdb = days_before_month( d2 , m2 , y2)
