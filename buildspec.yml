@@ -6,10 +6,8 @@ phases:
       - echo Installing Python dependencies (if any)
   build:
     commands:
-      - echo "Listing files in current directory:"
-      - ls -l
-      - echo "Running script..."
-      - python3 "dice guess game.py"
+      - echo Running Python script...
+      - python3 dice_guess_game.py
 
 artifacts:
   files:
