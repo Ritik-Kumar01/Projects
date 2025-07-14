@@ -4,11 +4,11 @@ phases:
   install:
     commands:
       - echo Installing Python dependencies (if any)
-      # If using requirements.txt, uncomment below
-      # - pip install -r requirements.txt
   build:
     commands:
-      - echo Running Python scripts...
+      - echo "Listing files in current directory:"
+      - ls -l
+      - echo "Running script..."
       - python3 "dice guess game.py"
 
 artifacts:
